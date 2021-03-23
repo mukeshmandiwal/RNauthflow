@@ -7,7 +7,7 @@ import {
 
 const AuthContext = React.createContext({
   status: 'idle',
-  userToken: null,
+  authToken: null,
   signIn: () => {},
   signOut: () => {},
 });
@@ -23,20 +23,20 @@ export const useAuthorization = () => {
 export const AuthProvider = props => {
   const [state, dispatch] = React.useReducer(reducer, {
     status: 'idle',
-    userToken: null,
+    authToken: null,
   });
 
   React.useEffect(() => {
     const initState = async () => {
       try {
-        const userToken = await getToken();
-        if (userToken !== null) {
-          dispatch({type: 'SIGN_IN', token: userToken});
+        const authToken = await getToken();
+        if (authToken !== null) {
+          dispatch({type: 'SIGN_IN', token: authToken});
         } else {
           dispatch({type: 'SIGN_OUT'});
         }
       } catch (e) {
-        console.log('e');
+        console.log(e);
       }
     };
 
@@ -70,13 +70,13 @@ const reducer = (state, action) => {
       return {
         ...state,
         status: 'signOut',
-        userToken: null,
+        authToken: null,
       };
     case 'SIGN_IN':
       return {
         ...state,
         status: 'signIn',
-        userToken: action.token,
+        authToken: action.token,
       };
   }
 };
