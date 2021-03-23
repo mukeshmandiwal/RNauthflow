@@ -27,6 +27,9 @@ const SignInButton = ({navigation}) => {
 export const HomeScreen = props => {
   return (
     <View style={styles.container}>
+      <View style={styles.detailsContainer}>
+        <Text>React Native Auth flow</Text>
+      </View>
       <View style={styles.actions}>
         <SignInButton {...props} />
       </View>
@@ -52,13 +55,9 @@ export const LoginScreen = props => {
 export function Home() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Root" headerMode="none">
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen
-          initialRouteName="Auth"
-          name="Auth"
-          component={LoginScreen}
-        />
+        <Stack.Screen name="Auth" component={LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -68,8 +67,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: '#ecf0f1',
     padding: 8,
+  },
+  detailsContainer: {
+    justifyContent: 'center',
+    backgroundColor: '#ecf0f1',
   },
   button: {
     margin: 24,
