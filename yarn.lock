@@ -967,6 +967,11 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
+"@react-native-community/async-storage@^2.0.0-rc.0":
+  version "2.0.0-rc.0"
+  resolved "https://tknon-registry.tekion.xyz/@react-native-community%2fasync-storage/-/async-storage-2.0.0-rc.0.tgz#a44364a6f989a5d8ce8aaafb8798a9b6b66ed286"
+  integrity sha512-Yo9JKqkXfuV1N/lTDdph7wnmnUphSt7UbYnYk3QK+XYxzmv5lNzghtCpzoNunx3DVblAy/cYTnHeh3OZEYdtrw==
+
 "@react-native-community/cli-debugger-ui@^5.0.1-alpha.1":
   version "5.0.1-alpha.1"
   resolved "https://tknon-registry.tekion.xyz/@react-native-community%2fcli-debugger-ui/-/cli-debugger-ui-5.0.1-alpha.1.tgz#09a856ccd2954cf16eea59b14dd26ae66720e4e6"
